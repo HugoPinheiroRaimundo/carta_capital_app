@@ -63,7 +63,7 @@ class _MyAccountPage extends State<MyAccountPage> {
               ),
               CustomElevatedButton(
                 label: 'Alterar Forma de pagamento',
-                page: '',
+                page: "/paymentPage",
               )
             ]),
       ),
@@ -71,5 +71,5 @@ class _MyAccountPage extends State<MyAccountPage> {
   }
 }
 
-
+// VIVA O CLEAN CODE
 // 192 linhas antes do refactore 
