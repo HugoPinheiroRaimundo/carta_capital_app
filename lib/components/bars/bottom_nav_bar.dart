@@ -22,6 +22,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     "/saved",
     "/news",
     "/profile",
+    // "/myAccount"
   ];
 
   void _onItemTap(int index) {

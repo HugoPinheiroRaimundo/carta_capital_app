@@ -1,12 +1,12 @@
 import 'package:carta_capital_app/ui/home_page.dart';
 import 'package:carta_capital_app/ui/magazines_page.dart';
+import 'package:carta_capital_app/ui/my_account_page.dart';
 import 'package:carta_capital_app/ui/navigation/navigation_bar_ui.dart';
 import 'package:carta_capital_app/ui/news_page.dart';
 import 'package:carta_capital_app/ui/saved_page.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/account_page.dart';
-import 'ui/create_account_page.dart';
 import 'ui/payment_page.dart';
 import 'ui/profile_page.dart';
 
@@ -29,9 +29,9 @@ class CartaCapital extends StatelessWidget {
         "/magazines": (_) => const MagazinePage(),
         "/saved": (_) => const SavedPage(),
         "/account": (_) => const AccountPage(),
-        "/createAccount": (_) => const CreateAccountPage(),
         "/paymentPage": (_) => const PaymentPage(),
         "/navigator": (_) => const NavigationBarUi(),
+        "/myAccount": (_) => const MyAccountPage(),
       },
     );
   }

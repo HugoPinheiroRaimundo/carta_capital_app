@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 const SizedBox(height: 15),
                 const CustomElevatedButton(
                   label: 'Entrar',
-                  page: '',
+                  page: '/myAccount',
                 ),
                 const SizedBox(height: 15),
                 Row(
