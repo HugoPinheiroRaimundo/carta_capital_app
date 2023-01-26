@@ -1,4 +1,7 @@
 import 'package:carta_capital_app/components/bars/title_appbar.dart';
+import 'package:carta_capital_app/components/buttons/custom_button.dart';
+import 'package:carta_capital_app/components/buttons/custom_dropdown_button.dart';
+import 'package:carta_capital_app/components/fields/text_field.dart';
 import 'package:flutter/material.dart';
 import '../components/bars/bottom_nav_bar.dart';
 
@@ -31,14 +34,14 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 20,
               ),
-              const TextField(
-                decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder()),
+              const CustomDropDownButton(
+                item: '',
               ),
               const SizedBox(
                 height: 20,
               ),
+
+              // ICONES DO CARTÃO DE CRÉDITO
               SizedBox(
                 width: 500,
                 height: 50,
@@ -50,40 +53,28 @@ class _PaymentPageState extends State<PaymentPage> {
                     },
                     child: const Text("Alterar Minha Senha")),
               ),
+
               const SizedBox(
                 height: 20,
               ),
-              const Text("Número do cartão"),
-              const SizedBox(
-                height: 5,
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder()),
-              ),
+              const CustomTextField(
+                  label: "Número do cartão",
+                  hintText: "ex. 1234 4567 7894 5612"),
               const SizedBox(
                 height: 20,
               ),
-              const Text("Nome do titular"),
-              const SizedBox(
-                height: 5,
-              ),
-              const TextField(
-                decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder()),
-              ),
+              const CustomTextField(
+                  label: "Nome do titular", hintText: "ex. joão silva"),
               const SizedBox(
                 height: 15,
               ),
               Row(
                 children: const [
-                  Text("Exemplo"),
+                  Text("Validade"),
                   SizedBox(
                     width: 132,
                   ),
-                  Text("Exemplo"),
+                  Text("CVV"),
                 ],
               ),
               const SizedBox(
@@ -93,6 +84,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
+                        hintText: "MM/AA",
                         hintStyle: TextStyle(color: Colors.grey),
                         border: OutlineInputBorder()),
                   ),
@@ -103,6 +95,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 Expanded(
                   child: TextField(
                     decoration: InputDecoration(
+                        hintText: "3 ou 4 digitos",
                         hintStyle: TextStyle(color: Colors.grey),
                         border: OutlineInputBorder()),
                   ),
@@ -111,53 +104,19 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 15,
               ),
-              const Text("Parcela"),
-              const SizedBox(
-                height: 5,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder()),
-              ),
+              const CustomTextField(label: "Parcela", hintText: "1x -R\$89,99"),
               const SizedBox(
                 height: 20,
               ),
-              TextFormField(
-                autofocus: false,
-                initialValue: 'Paypal',
-                decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey,
-                    suffixIcon: Icon(Icons.arrow_downward),
-                    border: OutlineInputBorder()),
-              ),
+              const CustomDropDownButton(item: "Paypal"),
               const SizedBox(
                 height: 15,
               ),
-              TextFormField(
-                autofocus: false,
-                initialValue: 'Google play',
-                decoration: const InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey,
-                    suffixIcon: Icon(Icons.arrow_downward),
-                    border: OutlineInputBorder()),
-              ),
+              const CustomDropDownButton(item: "Google Pay"),
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                width: 500,
-                height: 50,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.red[900]),
-                    onPressed: () {
-                      Navigator.of(context)
-                          .restorablePushReplacementNamed('/reset');
-                    },
-                    child: const Text("Confirmar")),
-              ),
+              const CustomElevatedButton(page: "/", label: "Confirmar"),
             ],
           ),
         ),
@@ -165,3 +124,4 @@ class _PaymentPageState extends State<PaymentPage> {
     );
   }
 }
+// 168
