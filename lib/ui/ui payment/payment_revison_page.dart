@@ -75,7 +75,11 @@ class PaymentRevisionPage extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            CustomElevatedButton(page: "", label: "Confirmar Pagamento")
+            // arrumar largura desse botão
+            SizedBox(
+              child: CustomElevatedButton(
+                  page: "/PaymentSucess", label: "Confirmar Pagamento"),
+            )
           ],
         )),
       ),

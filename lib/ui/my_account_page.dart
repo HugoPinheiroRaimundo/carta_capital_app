@@ -40,7 +40,7 @@ class _MyAccountPage extends State<MyAccountPage> {
               SizedBox(height: 20),
               CustomElevatedButton(
                 label: 'Alterar Minha Senha',
-                page: '/',
+                page: '/PasswordReset',
               ),
               SizedBox(
                 height: 10,

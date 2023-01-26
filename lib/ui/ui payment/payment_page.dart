@@ -3,7 +3,7 @@ import 'package:carta_capital_app/components/buttons/custom_button.dart';
 import 'package:carta_capital_app/components/buttons/custom_dropdown_button.dart';
 import 'package:carta_capital_app/components/fields/text_field.dart';
 import 'package:flutter/material.dart';
-import '../components/bars/bottom_nav_bar.dart';
+import '../../components/bars/bottom_nav_bar.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
