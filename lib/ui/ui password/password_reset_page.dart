@@ -2,9 +2,9 @@ import 'package:carta_capital_app/components/buttons/custom_button.dart';
 import 'package:carta_capital_app/components/fields/text_field.dart';
 import 'package:flutter/material.dart';
 
-import '../components/bars/bottom_nav_bar.dart';
-import '../components/bars/title_appbar.dart';
-import '../components/fields/password_text_field.dart';
+import '../../components/bars/bottom_nav_bar.dart';
+import '../../components/bars/title_appbar.dart';
+import '../../components/fields/password_text_field.dart';
 
 class PasswordReset extends StatelessWidget {
   const PasswordReset({super.key});
@@ -53,7 +53,8 @@ class PasswordReset extends StatelessWidget {
               SizedBox(
                 width: 500,
                 height: 50,
-                child: CustomElevatedButton(label: "Confirmar", page: ''),
+                child: CustomElevatedButton(
+                    label: "Confirmar", page: "/PasswordSucess"),
               )
             ]),
       ),

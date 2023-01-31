@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/buttons/custom_button.dart';
 import '../components/buttons/custom_checkbox.dart';
+import '../components/buttons/custom_text_button.dart';
 import '../components/fields/text_field.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -76,24 +77,18 @@ class _ProfilePageState extends State<ProfilePage> {
                 const SizedBox(height: 15),
                 Row(
                   children: const [
-                    SizedBox(width: 40),
-
-                    // Botão text 1
-                    Text("Esqueci minha senha",
-                        style: TextStyle(
-                          fontSize: 12,
-                          decoration: TextDecoration.underline,
-                        )),
-                    SizedBox(width: 40),
-
-                    // Botão text 2
-                    Text(
-                      "Esqueci meu E-mail",
-                      style: TextStyle(
-                        fontSize: 12,
-                        decoration: TextDecoration.underline,
-                      ),
-                    )
+                    SizedBox(width: 30),
+                    CustomTextButton(
+                      page: "",
+                      normalText: "Esqueci minha senha",
+                      isUnderline: true,
+                    ),
+                    SizedBox(width: 20),
+                    CustomTextButton(
+                      page: "",
+                      normalText: "Esqueci meu e-mail",
+                      isUnderline: true,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 15),
@@ -103,7 +98,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
                 Row(
                   children: <Widget>[
                     const SizedBox(width: 10),

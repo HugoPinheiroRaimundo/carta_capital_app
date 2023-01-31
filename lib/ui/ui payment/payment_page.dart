@@ -35,7 +35,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 height: 20,
               ),
               const CustomDropDownButton(
-                item: '',
+                item: 'Cartão de crédito',
               ),
               const SizedBox(
                 height: 20,
@@ -68,6 +68,8 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 15,
               ),
+
+              // refatorar com componentes
               Row(
                 children: const [
                   Text("Validade"),
@@ -108,7 +110,9 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 20,
               ),
-              const CustomDropDownButton(item: "Paypal"),
+              const CustomDropDownButton(
+                item: 'Paypal',
+              ),
               const SizedBox(
                 height: 15,
               ),

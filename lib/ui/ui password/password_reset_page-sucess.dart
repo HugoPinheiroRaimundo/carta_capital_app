@@ -1,12 +1,11 @@
-import 'package:carta_capital_app/components/bars/bottom_nav_bar.dart';
-import 'package:carta_capital_app/components/bars/title_appbar.dart';
-import 'package:carta_capital_app/components/buttons/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class PaymentSucess extends StatelessWidget {
-  const PaymentSucess({super.key});
+import '../../components/bars/bottom_nav_bar.dart';
+import '../../components/bars/title_appbar.dart';
+import '../../components/buttons/custom_button.dart';
+
+class ResetSucess extends StatelessWidget {
+  const ResetSucess({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +26,23 @@ class PaymentSucess extends StatelessWidget {
             height: 20,
           ),
           Text(
-            "Assinatura realizada!",
+            "Sucesso!",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           SizedBox(
             height: 20,
           ),
-          Text("Obá!"),
-          Text("Sua assinatura foi realizada com sucesso"),
+          Text("""Enviamos um e-mail com informações para a 
+              recuperação da sua senha."""),
           SizedBox(
             height: 20,
           ),
-          CustomElevatedButton(
-              page: "/myAccount", label: "Entrar na minha Conta")
+          SizedBox(
+              height: 40,
+              width: 350,
+              child: CustomElevatedButton(page: "/", label: "Entendi"))
         ]),
       ),
     );
   }
 }
-// 55 
