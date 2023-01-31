@@ -18,14 +18,15 @@ class _ProfilePageState extends State<ProfilePage> {
         body: Column(
       children: [
         Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(10),
             child: Row(
-              children: const [
-                Icon(
-                  Icons.arrow_back_ios,
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.arrow_back_ios),
                   color: Colors.red,
+                  onPressed: () {},
                 ),
-                Text("Voltar")
+                const Text("Voltar")
               ],
             )),
         Expanded(
@@ -79,26 +80,26 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: const [
                     SizedBox(width: 30),
                     CustomTextButton(
-                      page: "",
+                      page: "/PasswordRecovery",
                       normalText: "Esqueci minha senha",
                       isUnderline: true,
                     ),
                     SizedBox(width: 20),
                     CustomTextButton(
-                      page: "",
+                      page: "/emailRecovery",
                       normalText: "Esqueci meu e-mail",
                       isUnderline: true,
                     ),
                   ],
                 ),
-                const SizedBox(height: 15),
+                const SizedBox(height: 20),
                 const Center(
                   child: Text(
                     "OU",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 Row(
                   children: <Widget>[
                     const SizedBox(width: 10),
