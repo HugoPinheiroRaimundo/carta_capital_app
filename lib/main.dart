@@ -1,4 +1,7 @@
-import 'package:carta_capital_app/ui/ui%20password/email_recovery_page.dart';
+import 'package:carta_capital_app/ui/ui%20account/account_logged.dart';
+import 'package:carta_capital_app/ui/ui%20account/create_account_page.dart';
+import 'package:carta_capital_app/ui/ui%20email/email_confirme_page.dart';
+import 'package:carta_capital_app/ui/ui%20email/email_recovery_page.dart';
 import 'package:carta_capital_app/ui/ui%20password/password_recovery_page.dart';
 import 'package:carta_capital_app/ui/ui%20password/password_reset_page-sucess.dart';
 import 'package:carta_capital_app/ui/ui%20password/password_reset_page.dart';
@@ -42,6 +45,9 @@ class CartaCapital extends StatelessWidget {
         "/PasswordReset": (_) => const PasswordReset(),
         "/PasswordRecovery": (_) => const PasswordRecovery(),
         "/emailRecovery": (_) => const EmailRecovery(),
+        "/accountLogged": (_) => AccountLogged(),
+        "/emailConfirme": (_) => const EmailConfirme(),
+        "/createAccount": (_) => const CreateAccount(),
       },
     );
   }

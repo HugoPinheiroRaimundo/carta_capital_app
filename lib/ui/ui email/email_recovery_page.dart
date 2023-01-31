@@ -51,7 +51,7 @@ class EmailRecovery extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              CustomElevatedButton(page: "", label: "Validar")
+              CustomElevatedButton(page: "/emailConfirme", label: "Validar")
             ],
           ),
         )

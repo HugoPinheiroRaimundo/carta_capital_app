@@ -19,7 +19,10 @@ class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
               SizedBox(
                 width: 25,
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .restorablePushReplacementNamed("/accountLogged");
+                    },
                     icon: const Icon(
                       Icons.menu,
                       color: Colors.black,
@@ -56,7 +59,7 @@ class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
         Padding(
           padding:
               EdgeInsets.only(left: 5.0, top: 15.0, bottom: 15.0, right: 5.0),
-          child: CustomElevatedButton(page: "", label: "Assine"),
+          child: CustomElevatedButton(page: "/createAccount", label: "Assine"),
         )
       ],
     );

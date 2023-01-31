@@ -40,7 +40,8 @@ class ResetSucess extends StatelessWidget {
           SizedBox(
               height: 40,
               width: 350,
-              child: CustomElevatedButton(page: "/", label: "Entendi"))
+              child: CustomElevatedButton(
+                  page: "/emailConfirme", label: "Entendi"))
         ]),
       ),
     );
