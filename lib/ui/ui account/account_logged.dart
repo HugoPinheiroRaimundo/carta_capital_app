@@ -1,12 +1,11 @@
 import 'dart:ffi';
 
 import 'package:carta_capital_app/components/bars/title_appbar.dart';
+import 'package:carta_capital_app/components/buttons/custom_text_button.dart';
 import 'package:flutter/material.dart';
 
 class AccountLogged extends StatelessWidget {
-  AccountLogged({super.key});
-
-  final _myList = ["MINHA CONTA", "CONFIGURAÇÕES", "FAQ"];
+  const AccountLogged({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,27 +37,39 @@ class AccountLogged extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Text("MINHA CONTA",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.red)),
+                  const CustomTextButton(
+                    page: "",
+                    normalText: "MINHA CONTA",
+                    isBold: true,
+                    isRed: true,
+                    fontSize: 15,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
                   Divider(
                     color: Colors.black,
                   ),
-                  Text("CONFIGURAÇÕES",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.red)),
+                  const CustomTextButton(
+                    page: "/configPage",
+                    normalText: "CONFIGURÇÕES",
+                    isBold: true,
+                    isRed: true,
+                    fontSize: 15,
+                  ),
                   SizedBox(
                     height: 10,
                   ),
                   Divider(
                     color: Colors.black,
                   ),
-                  Text("FAQ",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.red)),
+                  const CustomTextButton(
+                    page: "",
+                    normalText: "FAQ",
+                    isBold: true,
+                    isRed: true,
+                    fontSize: 15,
+                  ),
                   SizedBox(
                     height: 10,
                   ),
@@ -66,7 +77,7 @@ class AccountLogged extends StatelessWidget {
                     color: Colors.black,
                   ),
                   SizedBox(
-                    height: 420,
+                    height: 330,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
