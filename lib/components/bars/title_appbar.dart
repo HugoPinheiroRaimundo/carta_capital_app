@@ -2,6 +2,7 @@ import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../ui/ui account/account_logged.dart';
 import '../buttons/custom_button.dart';
 
 class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -20,8 +21,19 @@ class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
                 width: 25,
                 child: IconButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .restorablePushReplacementNamed("/accountLogged");
+                      Navigator.of(context).push(PageRouteBuilder(pageBuilder:
+                          (BuildContext context, Animation<double> animation,
+                              Animation<double> secondaryAnimation) {
+                        return const AccountLogged();
+                      }, transitionsBuilder: (BuildContext context,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation,
+                          Widget child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      }));
                     },
                     icon: const Icon(
                       Icons.menu,

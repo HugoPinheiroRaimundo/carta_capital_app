@@ -1,4 +1,5 @@
 import 'package:carta_capital_app/ui/config_page.dart';
+import 'package:carta_capital_app/ui/news_page_resume.dart';
 import 'package:carta_capital_app/ui/ui%20account/account_logged.dart';
 import 'package:carta_capital_app/ui/ui%20account/create_account_page.dart';
 import 'package:carta_capital_app/ui/ui%20email/email_confirme_page.dart';
@@ -50,6 +51,7 @@ class CartaCapital extends StatelessWidget {
         "/emailConfirme": (_) => const EmailConfirme(),
         "/createAccount": (_) => const CreateAccount(),
         "/configPage": (_) => const ConfigPage(),
+        "/newsResume": (_) => const NewsResume(),
       },
     );
   }
