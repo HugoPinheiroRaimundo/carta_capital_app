@@ -24,6 +24,7 @@ class CustomCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.0)),
           child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
             ListTile(
+              minVerticalPadding: 15,
               onTap: () {
                 Navigator.of(context).pushNamed(page);
               },
@@ -36,7 +37,7 @@ class CustomCard extends StatelessWidget {
                       Icons.radio_button_checked,
                     ),
               title: Padding(
-                padding: const EdgeInsets.only(top: 15, bottom: 10),
+                padding: const EdgeInsets.only(top: 5, bottom: 10),
                 child: Text(
                   title,
                   style: const TextStyle(
