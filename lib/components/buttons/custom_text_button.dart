@@ -7,15 +7,15 @@ class CustomTextButton extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final String page;
+  final bool isUnderline;
   final bool isRed;
   final bool isBold;
-  final bool isUnderline;
 
   const CustomTextButton(
       {Key? key,
       required this.page,
       required this.normalText,
-      this.fontSize = 12,
+      this.fontSize = 15,
       this.fontWeight = FontWeight.normal,
       this.isUnderline = false,
       this.isRed = false,

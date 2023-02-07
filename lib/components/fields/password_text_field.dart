@@ -10,7 +10,7 @@ class PasswordTextField extends StatefulWidget {
 }
 
 class _PasswordTextFieldState extends State<PasswordTextField> {
-  bool passwordVisible = false;
+  bool passwordVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
                   },
                   icon: Icon(passwordVisible
                       ? Icons.visibility_off
-                      : Icons.visibility))),
+                      : Icons.visibility, color: Colors.black,))),
         ),
       ],
     );

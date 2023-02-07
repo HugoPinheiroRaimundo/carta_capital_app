@@ -1,9 +1,9 @@
 import 'package:carta_capital_app/components/bars/bottom_nav_bar.dart';
 import 'package:carta_capital_app/components/bars/title_appbar.dart';
-import 'package:carta_capital_app/components/cards/custom_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../components/cards/custom_news_card.dart';
 import '../utils/default.dart';
 
 class NewsPage extends StatefulWidget {
@@ -20,8 +20,8 @@ class _NewsPageState extends State<NewsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
-            Center(
+            const SizedBox(height: 20),
+            const Center(
               child: Text(
                 "NOTIFICAÇÕES",
                 style: TextStyle(
@@ -30,48 +30,48 @@ class _NewsPageState extends State<NewsPage> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 20),
-            CustomCard(
+            const SizedBox(height: 20),
+            CustomNewsCard(
               title: "Sua assinatura vencerá em breve.",
               radioOn: true,
               page: "/newsResume",
-              defaultText: DefaultConfig.defaultTextCard,
+              descriptionText: DefaultConfig.defaultTextCard,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomCard(
+            CustomNewsCard(
               title: "Chegou uma nova edição quentinha.",
               radioOn: true,
               page: '',
-              defaultText: DefaultConfig.defaultTextCard,
+              descriptionText: DefaultConfig.defaultTextCard,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomCard(
+            CustomNewsCard(
               title: "Essa matéria foi feita pra você.",
               radioOn: true,
               page: '',
-              defaultText: DefaultConfig.defaultTextCard,
+              descriptionText: DefaultConfig.defaultTextCard,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomCard(
+            CustomNewsCard(
               title: "Sua assinatura vencerá em breve.",
               radioOn: false,
               page: '',
-              defaultText: DefaultConfig.defaultTextCard,
+              descriptionText: DefaultConfig.defaultTextCard,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            CustomCard(
-              title: "Sua assinatura vencerá em breve",
+            CustomNewsCard(
+              title: "Chegou uma nova edição quentinha.",
               radioOn: false,
               page: '',
-              defaultText: DefaultConfig.defaultTextCard,
+              descriptionText: DefaultConfig.defaultTextCard,
             ),
           ],
         ),

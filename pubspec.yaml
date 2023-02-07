@@ -61,8 +61,17 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - "assets/google.svg"
-    - "assets/apple.svg"
+    - assets/images/mags/image17.png
+    - assets/images/mags/image15.png
+    - assets/images/mags/image22.png
+    - assets/images/mags/image24.png
+    - assets/images/mags/image26.png
+    - assets/images/mags/image27.png
+    - assets/images/mags/capaHome.png
+    - assets/images/mags/groupedMags.png
+    - assets/images/mags/image33.png
+    - assets/images/mags/image34.png
+    - assets/images/plusbutton.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

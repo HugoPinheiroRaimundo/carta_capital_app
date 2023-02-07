@@ -13,8 +13,7 @@ class CustomDropDownButton extends StatefulWidget {
 
 class _CustomDropDownButtonState extends State<CustomDropDownButton> {
   List<String> items = ['Paypal', 'Google Pay', 'Cartão de crédito'];
-
-  String selectedItem = "";
+  String? selectedItem = "";
 
   @override
   void initState() {
@@ -43,7 +42,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
                 value: item,
                 child: Text(item, style: const TextStyle(fontSize: 15))))
             .toList(),
-        onChanged: (item) => setState(() => selectedItem = item!),
+        onChanged: (item) => setState(() => selectedItem = item),
       ),
     );
   }

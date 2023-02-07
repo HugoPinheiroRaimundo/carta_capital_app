@@ -1,7 +1,6 @@
 import 'package:carta_capital_app/components/bars/title_appbar.dart';
 import 'package:carta_capital_app/ui/home_page.dart';
 import 'package:carta_capital_app/ui/magazines_page.dart';
-import 'package:carta_capital_app/ui/ui%20account/my_account_page.dart';
 import 'package:carta_capital_app/ui/news_page.dart';
 import 'package:carta_capital_app/ui/profile_page.dart';
 import 'package:carta_capital_app/ui/saved_page.dart';
@@ -19,13 +18,13 @@ class NavigationBarUi extends StatefulWidget {
 class _NavigationBarUiState extends State<NavigationBarUi> {
   int _indexCurrent = 0;
 
+
   final List<Widget> _screenOptions = <Widget>[
     HomePage(),
     MagazinePage(),
     SavedPage(),
     NewsPage(),
     ProfilePage(),
-    MyAccountPage(),
   ];
 
   void _onItemTap(int index) {

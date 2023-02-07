@@ -12,10 +12,21 @@ class MagazinePage extends StatefulWidget {
 class _MagazinePageState extends State<MagazinePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Mags"),
+    return Scaffold(
+        body: GridView(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
       ),
-    );
+      children: [
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+        Image.asset('assets/image20.png'),
+      ],
+    ));
   }
 }

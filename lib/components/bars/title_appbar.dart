@@ -1,8 +1,8 @@
+import 'package:carta_capital_app/ui/account/menu_account.dart';
 import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../ui/ui account/account_logged.dart';
 import '../buttons/custom_button.dart';
 
 class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -24,7 +24,7 @@ class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
                       Navigator.of(context).push(PageRouteBuilder(pageBuilder:
                           (BuildContext context, Animation<double> animation,
                               Animation<double> secondaryAnimation) {
-                        return const AccountLogged();
+                        return const MenuAccount();
                       }, transitionsBuilder: (BuildContext context,
                           Animation<double> animation,
                           Animation<double> secondaryAnimation,
@@ -71,7 +71,7 @@ class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
         Padding(
           padding:
               EdgeInsets.only(left: 5.0, top: 15.0, bottom: 15.0, right: 5.0),
-          child: CustomElevatedButton(page: "/createAccount", label: "Assine"),
+          child: CustomElevatedButton(page: "/signUp", label: "Assine"),
         )
       ],
     );

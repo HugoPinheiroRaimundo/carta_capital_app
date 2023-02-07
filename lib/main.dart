@@ -1,23 +1,23 @@
-import 'package:carta_capital_app/ui/config_page.dart';
-import 'package:carta_capital_app/ui/news_page_resume.dart';
-import 'package:carta_capital_app/ui/ui%20account/account_logged.dart';
-import 'package:carta_capital_app/ui/ui%20account/create_account_page.dart';
-import 'package:carta_capital_app/ui/ui%20email/email_confirme_page.dart';
-import 'package:carta_capital_app/ui/ui%20email/email_recovery_page.dart';
-import 'package:carta_capital_app/ui/ui%20password/password_recovery_page.dart';
-import 'package:carta_capital_app/ui/ui%20password/password_reset_page-sucess.dart';
-import 'package:carta_capital_app/ui/ui%20password/password_reset_page.dart';
-import 'package:carta_capital_app/ui/ui%20payment/Payment_sucess_page.dart';
+import 'package:carta_capital_app/ui/account/my_account_page.dart';
+import 'package:carta_capital_app/ui/email/email_confirm_page.dart';
+import 'package:carta_capital_app/ui/email/email_recovery_page.dart';
 import 'package:carta_capital_app/ui/home_page.dart';
 import 'package:carta_capital_app/ui/magazines_page.dart';
-import 'package:carta_capital_app/ui/ui%20account/my_account_page.dart';
 import 'package:carta_capital_app/ui/navigation/navigation_bar_ui.dart';
 import 'package:carta_capital_app/ui/news_page.dart';
-import 'package:carta_capital_app/ui/ui%20payment/payment_revison_page.dart';
+import 'package:carta_capital_app/ui/news_page_resume.dart';
+import 'package:carta_capital_app/ui/password/password_recovery_page.dart';
+import 'package:carta_capital_app/ui/password/password_reset_page-sucess.dart';
+import 'package:carta_capital_app/ui/password/password_reset_page.dart';
+import 'package:carta_capital_app/ui/payment/Payment_sucess_page.dart';
+import 'package:carta_capital_app/ui/payment/payment_page.dart';
+import 'package:carta_capital_app/ui/payment/payment_revison_page.dart';
 import 'package:carta_capital_app/ui/saved_page.dart';
+import 'package:carta_capital_app/ui/sign_up_page.dart';
 import 'package:flutter/material.dart';
 
-import 'ui/ui payment/payment_page.dart';
+import 'ui/account/account_page.dart';
+import 'ui/create_account_page.dart';
 import 'ui/profile_page.dart';
 
 void main() {
@@ -36,22 +36,22 @@ class CartaCapital extends StatelessWidget {
         "/profile": (_) => const ProfilePage(),
         "/home": (_) => const HomePage(),
         "/news": (_) => const NewsPage(),
+        "/newsResume": (_) => const NewsResume(),
         "/magazines": (_) => const MagazinePage(),
         "/saved": (_) => const SavedPage(),
-        "/PasswordSucess": (_) => const ResetSucess(),
-        "/paymentPage": (_) => const PaymentPage(),
-        "/navigator": (_) => const NavigationBarUi(),
+        "/account": (_) => const AccountPage(),
         "/myAccount": (_) => const MyAccountPage(),
-        "/PaymentRevision": (_) => const PaymentRevisionPage(),
-        "/PaymentSucess": (_) => const PaymentSucess(),
-        "/PasswordReset": (_) => const PasswordReset(),
-        "/PasswordRecovery": (_) => const PasswordRecovery(),
+        "/signUp": (_) => const SignUpMagazine(),
+        "/createAccount": (_) => const CreateAccountPage(),
+        "/payment": (_) => const PaymentPage(),
+        "/paymentRevision": (_) => const PaymentRevisionPage(),
+        "/paymentSucess": (_) => const PaymentSucessPage(),
+        "/navigator": (_) => const NavigationBarUi(),
+        "/passwordRecovery": (_) => const PasswordRecovery(),
+        "/passwordReset": (_) => const PasswordReset(),
+        "/resetSucess": (_) => const ResetSucess(),
         "/emailRecovery": (_) => const EmailRecovery(),
-        "/accountLogged": (_) => AccountLogged(),
-        "/emailConfirme": (_) => const EmailConfirme(),
-        "/createAccount": (_) => const CreateAccount(),
-        "/configPage": (_) => const ConfigPage(),
-        "/newsResume": (_) => const NewsResume(),
+        "/emailConfirm": (_) => const EmailConfirm(),
       },
     );
   }

@@ -1,17 +1,18 @@
+import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
 
-class CustomCard extends StatelessWidget {
+class CustomNewsCard extends StatelessWidget {
   final String title;
   final bool radioOn;
   final String page;
-  final String? defaultText;
+  final String? descriptionText;
 
-  const CustomCard(
+  const CustomNewsCard(
       {super.key,
       required this.title,
       required this.radioOn,
       required this.page,
-      required this.defaultText});
+      required this.descriptionText});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +21,14 @@ class CustomCard extends StatelessWidget {
       child: Card(
           color: Colors.grey.shade100,
           shape: RoundedRectangleBorder(
-              side: const BorderSide(color: Colors.black, width: 1),
+              side: BorderSide(
+                  color: radioOn ? Colors.black : DefaultConfig.borderGrey,
+                  width: 1),
               borderRadius: BorderRadius.circular(5.0)),
           child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
             ListTile(
-              minVerticalPadding: 15,
               onTap: () {
-                Navigator.of(context).pushNamed(page);
+                Navigator.of(context).pushNamed(page, arguments: {"descriptionText" : descriptionText});
               },
               trailing: radioOn
                   ? const Icon(
@@ -37,21 +39,19 @@ class CustomCard extends StatelessWidget {
                       Icons.radio_button_checked,
                     ),
               title: Padding(
-                padding: const EdgeInsets.only(top: 5, bottom: 10),
+                padding: const EdgeInsets.only(top: 15, bottom: 10),
                 child: Text(
                   title,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 14),
                 ),
               ),
-              subtitle: Expanded(
-                child: Text(
-                  defaultText!,
-                  softWrap: true,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontSize: 13),
-                ),
+              subtitle: Text(
+                descriptionText!,
+                softWrap: true,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 13),
               ),
             ),
           ])),

@@ -1,9 +1,10 @@
-import 'package:carta_capital_app/components/bars/title_appbar.dart';
-import 'package:carta_capital_app/components/buttons/custom_button.dart';
-import 'package:carta_capital_app/components/buttons/custom_dropdown_button.dart';
-import 'package:carta_capital_app/components/fields/text_field.dart';
+import 'package:carta_capital_app/components/bars/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import '../../components/bars/bottom_nav_bar.dart';
+
+import '../../components/bars/title_appbar.dart';
+import '../../components/buttons/custom_button.dart';
+import '../../components/buttons/custom_dropdown_button.dart';
+import '../../components/fields/text_field.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -17,7 +18,6 @@ class _PaymentPageState extends State<PaymentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TitleAppBar(),
-      bottomNavigationBar: const CustomBottomNavBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -68,8 +68,6 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 15,
               ),
-
-              // refatorar com componentes
               Row(
                 children: const [
                   Text("Validade"),
@@ -110,9 +108,7 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 20,
               ),
-              const CustomDropDownButton(
-                item: 'Paypal',
-              ),
+              const CustomDropDownButton(item: "Paypal"),
               const SizedBox(
                 height: 15,
               ),
@@ -126,7 +122,7 @@ class _PaymentPageState extends State<PaymentPage> {
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavBar(),
     );
   }
 }
-// 168

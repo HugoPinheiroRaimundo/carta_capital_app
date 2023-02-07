@@ -14,7 +14,7 @@ class CustomBottomNavBar extends StatefulWidget {
 }
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
-  int indexCurrent = 0;
+  int indexCurrent =0;
 
   final List<String> _screenOptions = <String>[
     "/home",
@@ -22,16 +22,15 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     "/saved",
     "/news",
     "/profile",
-    // "/myAccount"
   ];
 
-  void _onItemTap(int index) {
+
+  void _onItemTap(int index){
     setState(() {
       indexCurrent = index;
       Navigator.of(context).pushReplacementNamed("/navigator");
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(

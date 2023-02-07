@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 
 class CustomIconButton extends StatelessWidget {
-  final Icon icon;
+  final IconData icon;
   final String text;
+  final String page;
 
-  const CustomIconButton({Key? key, required this.icon, required this.text})
+  const CustomIconButton({Key? key, required this.icon, required this.text, this.page = "/"})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      icon: icon,
-      style: const ButtonStyle(
-          side: MaterialStatePropertyAll<BorderSide>(
-              BorderSide(color: Colors.grey, width: 2)
-          )
+      onPressed: () {
+        Navigator.of(context).restorablePushReplacementNamed(page);
+      },
+      icon: Icon(
+        icon,
+        color: Colors.black,
       ),
-      onPressed: () {},
-      label: Text(text),
+      label: Text(text,
+          style: const TextStyle(fontSize: 8, color: Colors.black)),
+      style: ElevatedButton.styleFrom(primary: Colors.white),
     );
   }
 }

@@ -1,8 +1,12 @@
+import 'package:carta_capital_app/components/buttons/alt_signin_buttons.dart';
+import 'package:carta_capital_app/components/buttons/custom_text_button.dart';
+import 'package:carta_capital_app/components/fields/password_text_field.dart';
+import 'package:carta_capital_app/components/fields/text_field.dart';
+import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
+
 import '../components/buttons/custom_button.dart';
 import '../components/buttons/custom_checkbox.dart';
-import '../components/buttons/custom_text_button.dart';
-import '../components/fields/text_field.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -15,134 +19,109 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              children: <Widget>[
-                IconButton(
-                  icon: const Icon(Icons.arrow_back_ios),
-                  color: Colors.red,
-                  onPressed: () {},
-                ),
-                const Text("Voltar")
-              ],
-            )),
-        Expanded(
-            child: SingleChildScrollView(
-                child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(children: [
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+                padding: const EdgeInsets.only(top: 29, left: 20, right: 20),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.arrow_back_ios,
+                      color: DefaultConfig.defaultThemeColor,
+                    ),
+                    const Text("Voltar")
+                  ],
+                )),
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                const Text("Entre na sua conta",
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                const SizedBox(height: 15),
-                const Text("Ainda não tem cadastro no cartaCapital?"),
-
-                // TALVEZ FAZER UM COMPONENTE DISSO
-                const Text(
-                  "Assine agora!",
-                  style: TextStyle(
-                      decoration: TextDecoration.underline, color: Colors.red),
+              children: [
+                Padding(
+                    padding: DefaultConfig.defaultFieldPadding,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text("Entre na sua conta",
+                              style: DefaultConfig().defaultTextStyle(true,
+                                  false, false, DefaultConfig.defaultFont, 19)),
+                          const SizedBox(height: 8),
+                          const Text("Ainda não tem cadastro no CartaCapital?"),
+                          Text(
+                            "Assine agora!",
+                            style: DefaultConfig().defaultTextStyle(true, true,
+                                true, DefaultConfig.defaultFont, 15),
+                          ),
+                        ])),
+                Padding(
+                    padding: DefaultConfig.defaultFieldPadding,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: const [
+                        CustomTextField(
+                            label: "E-mail",
+                            hintText: "ex. nome@gmail.com.br",
+                            inputType: TextInputType.emailAddress),
+                        SizedBox(height: 15),
+                        PasswordTextField(label: "Senha"),
+                      ],
+                    )),
+                const Padding(
+                  padding: EdgeInsets.only(top: 8.0, right: 8, left: 8),
+                  child: CustomCheckBox(
+                      normalText: "Concordo com os ",
+                      underlinedText: "termos e condições"),
                 ),
-                const SizedBox(height: 20),
-                const CustomTextField(
-                    label: "E-Mail", hintText: "ex. nome@email.com.br"),
+                const Padding(
+                  padding: EdgeInsets.only(right: 8, left: 8),
+                  child: CustomCheckBox(
+                      normalText: "Aceito a ",
+                      underlinedText: "Política de Privacidade"),
+                ),
+                const SizedBox(height: 25),
                 const SizedBox(
-                  height: 10,
-                ),
-                const CustomTextField(label: "Senha"),
-                Row(
-                  children: const [
-                    CustomCheckBox(
-                        normalText: "Concordo com os ",
-                        underlinedText: "termos e condições"),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    CustomCheckBox(
-                        normalText: "Aceito a ",
-                        underlinedText: "Política de Privacidade"),
-                  ],
-                ),
-                const SizedBox(height: 15),
-                const CustomElevatedButton(
-                  label: 'Entrar',
-                  page: '/myAccount',
+                  height: 65,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                    child: CustomElevatedButton(
+                        page: "/createAccount", label: "Entrar", isBold: true),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
-                    SizedBox(width: 30),
                     CustomTextButton(
-                      page: "/PasswordRecovery",
                       normalText: "Esqueci minha senha",
                       isUnderline: true,
+                      page: "/passwordReset",
                     ),
-                    SizedBox(width: 20),
                     CustomTextButton(
-                      page: "/emailRecovery",
-                      normalText: "Esqueci meu e-mail",
+                      normalText: "Esqueci meu E-mail",
                       isUnderline: true,
+                      page: "/emailRecovery",
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
                 const Center(
                   child: Text(
                     "OU",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(height: 15),
-                Row(
-                  children: <Widget>[
-                    const SizedBox(width: 10),
-                    SizedBox(
-                      height: 50,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .restorablePushReplacementNamed('/');
-                        },
-                        icon: const Icon(
-                          Icons.android,
-                          color: Colors.black,
-                        ),
-                        label: const Text("Fazer Login com o goole",
-                            style: TextStyle(fontSize: 8, color: Colors.black)),
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                      ),
-                    ),
-                    const SizedBox(width: 40),
-                    SizedBox(
-                      height: 50,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .restorablePushReplacementNamed('/');
-                        },
-                        icon: const Icon(
-                          Icons.apple,
-                          color: Colors.black,
-                        ),
-                        label: const Text("Fazer Login com apple",
-                            style: TextStyle(fontSize: 8, color: Colors.black)),
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
+                const SizedBox(height: 10),
+               const Padding(
+                   padding: EdgeInsets.all(8.0),
+                  child: AltSignButton(),
+               ), //Put Row with two buttons;
               ],
             ),
-          ]),
-        )))
-      ],
-    ));
+                ],
+              ),
+      ),
+    );
   }
 }
