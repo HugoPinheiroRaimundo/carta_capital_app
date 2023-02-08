@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../navigation/navigation_bar_ui.dart';
+import '../sign_up_page.dart';
+
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -79,11 +82,25 @@ class PageOne extends StatelessWidget {
         Padding(
             padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
             child: Row(
-              children: [
-                const Text(
-                  "PULAR",
-                  style: TextStyle(color: Colors.white),
-                ),
+              children: <Widget>[
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(PageRouteBuilder(pageBuilder:
+                          (BuildContext context, Animation<double> animation,
+                              Animation<double> secondaryAnimation) {
+                        return const NavigationBarUi();
+                      }, transitionsBuilder: (BuildContext context,
+                          Animation<double> animation,
+                          Animation<double> secondaryAnimation,
+                          Widget child) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      }));
+                    },
+                    child: const Text("Pular",
+                        style: TextStyle(color: Colors.white)))
               ],
             )),
         Expanded(
@@ -91,7 +108,7 @@ class PageOne extends StatelessWidget {
           alignment: Alignment.center,
           child: RichText(
               text: TextSpan(
-                  text: "      Seja bem vindo ao \n",
+                  text: "                  Seja bem vindo ao \n",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -101,11 +118,11 @@ class PageOne extends StatelessWidget {
                   children: const <TextSpan>[
                 TextSpan(
                   text: "  Carta",
-                  style: TextStyle(color: Colors.white, fontSize: 30),
+                  style: TextStyle(color: Colors.white, fontSize: 47),
                 ),
                 TextSpan(
                   text: "Capital",
-                  style: TextStyle(color: Colors.black, fontSize: 30),
+                  style: TextStyle(color: Colors.black, fontSize: 47),
                 )
               ])),
         )),
@@ -113,18 +130,18 @@ class PageOne extends StatelessWidget {
           height: 150,
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 20, bottom: 40),
+          padding: const EdgeInsets.only(bottom: 28, right: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text(
-                "Seguir",
-                style: TextStyle(color: Colors.white),
+              Text("Seguir", style: TextStyle(color: Colors.white)),
+              IconButton(
+                icon: Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
               ),
-              Icon(
-                Icons.arrow_forward,
-                color: Colors.white,
-              )
             ],
           ),
         )
@@ -151,11 +168,26 @@ class PageTwo extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.only(top: 50, left: 20, right: 20),
                   child: Row(
-                    children: const [
-                      Text(
-                        "PULAR",
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    children: <Widget>[
+                      TextButton(
+                          onPressed: () {
+                            Navigator.of(context).push(PageRouteBuilder(
+                                pageBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secondaryAnimation) {
+                              return const NavigationBarUi();
+                            }, transitionsBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secondaryAnimation,
+                                    Widget child) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            }));
+                          },
+                          child: Text("Pular",
+                              style: const TextStyle(color: Colors.white)))
                     ],
                   )),
               Expanded(
@@ -163,13 +195,50 @@ class PageTwo extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 100.0),
-                  child: Column(children: const [
+                  child: Column(children: [
                     Text(
                       "Receba as edições em sua casa\n   e tenha acesso ilimitado ao\n               conteúdo do app.",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Image.asset("assets/images/mags/groupedMags.png"),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    SizedBox(
+                      height: 40,
+                      width: 130,
+                      child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(PageRouteBuilder(
+                                pageBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secondaryAnimation) {
+                              return const SignUpMagazine();
+                            }, transitionsBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secondaryAnimation,
+                                    Widget child) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            }));
+                          },
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll<Color>(Colors.black),
+                              shape: MaterialStatePropertyAll(
+                                  RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(1.0),
+                                side: BorderSide(color: Colors.black, width: 2),
+                              ))),
+                          child: Text("ASSINE")),
                     )
                   ]),
                 ),
@@ -178,23 +247,29 @@ class PageTwo extends StatelessWidget {
                 height: 150,
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 40),
+                padding: const EdgeInsets.only(bottom: 28, right: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Icon(Icons.arrow_back, color: Colors.white),
-                    Text(
-                      "Voltar",
-                      style: TextStyle(color: Colors.white),
+                  children: <Widget>[
+                    IconButton(
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
                     ),
-                    SizedBox(
-                      width: 260,
+                    const Text("Voltar", style: TextStyle(color: Colors.white)),
+                    const SizedBox(
+                      width: 195,
                     ),
-                    Text(
-                      "Seguir",
-                      style: TextStyle(color: Colors.white),
+                    const Text("Seguir", style: TextStyle(color: Colors.white)),
+                    IconButton(
+                      icon: const Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
                     ),
-                    Icon(Icons.arrow_forward, color: Colors.white),
                   ],
                 ),
               ),
@@ -222,14 +297,29 @@ class PageThree extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
                 child: Row(
-                  children: [
-                    const Text(
-                      "PULAR",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(PageRouteBuilder(
+                              pageBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secondaryAnimation) {
+                            return const NavigationBarUi();
+                          }, transitionsBuilder: (BuildContext context,
+                                  Animation<double> animation,
+                                  Animation<double> secondaryAnimation,
+                                  Widget child) {
+                            return FadeTransition(
+                              opacity: animation,
+                              child: child,
+                            );
+                          }));
+                        },
+                        child: const Text("Pular",
+                            style: TextStyle(color: Colors.white)))
                   ],
                 )),
-            SizedBox(
+            const SizedBox(
               height: 80,
             ),
             Column(
@@ -261,7 +351,7 @@ class PageThree extends StatelessWidget {
                   child: Icon(Icons.check),
                 ),
                 Text(
-                  " Submeta artigos ou textos ao\n exclusivo Blog do Assinante",
+                  " Acesse o acervo digital, desde a\n edição 01 de CartaCapital",
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ]),
@@ -274,7 +364,7 @@ class PageThree extends StatelessWidget {
                   child: Icon(Icons.check),
                 ),
                 Text(
-                  " Submeta artigos ou textos ao\n exclusivo Blog do Assinante",
+                  " Favorite reportagens e artigos para ler\n quando quiser",
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ]),
@@ -283,36 +373,42 @@ class PageThree extends StatelessWidget {
               padding: const EdgeInsets.only(top: 25, left: 45),
               child: Row(children: const [
                 Padding(
-                  padding: EdgeInsets.only(bottom: 15),
+                  padding: EdgeInsets.only(bottom: 35),
                   child: Icon(Icons.check),
                 ),
                 Text(
-                  " Submeta artigos ou textos ao\n exclusivo Blog do Assinante",
+                  " Acesse a área do assinante, um\n espaço exclusivo para consultar os\n dados de sua assinatura",
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ]),
             ),
-            SizedBox(
-              height: 150,
+            const SizedBox(
+              height: 120,
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 40),
+              padding: const EdgeInsets.only(bottom: 5, right: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const <Widget>[
-                  Icon(Icons.arrow_back, color: Colors.white),
-                  Text(
-                    "Voltar",
-                    style: TextStyle(color: Colors.white),
+                children: <Widget>[
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
-                  SizedBox(
-                    width: 260,
+                  const Text("Voltar", style: TextStyle(color: Colors.white)),
+                  const SizedBox(
+                    width: 195,
                   ),
-                  Text(
-                    "Seguir",
-                    style: TextStyle(color: Colors.white),
+                  const Text("Seguir", style: TextStyle(color: Colors.white)),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
-                  Icon(Icons.arrow_forward, color: Colors.white),
                 ],
               ),
             ),

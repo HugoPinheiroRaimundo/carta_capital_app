@@ -32,13 +32,13 @@ Scelerisque eleifend donec pretium lputate sapien nec sagittis aliquam. Pharetra
     );
   }
 
-  ElevatedButton sharpElevatedButton( String title){
+  ElevatedButton sharpElevatedButton(String title) {
     return ElevatedButton(
         style: ButtonStyle(
-          shape: const MaterialStatePropertyAll(RoundedRectangleBorder(
-              borderRadius: BorderRadius.zero)),
-          backgroundColor: MaterialStatePropertyAll(
-              DefaultConfig.defaultThemeColor),
+          shape: const MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+          backgroundColor:
+              MaterialStatePropertyAll(DefaultConfig.defaultThemeColor),
         ),
         onPressed: () {},
         child: Text(
@@ -47,8 +47,6 @@ Scelerisque eleifend donec pretium lputate sapien nec sagittis aliquam. Pharetra
               color: Colors.white,
               fontSize: 14,
               fontFamily: DefaultConfig.defaultFont),
-        )
-    );
-
+        ));
   }
 }
