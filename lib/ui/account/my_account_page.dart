@@ -17,7 +17,9 @@ class _MyAccountPage extends State<MyAccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TitleAppBar(),
-      bottomNavigationBar: const CustomBottomNavBar(indexPage: 4,),
+      bottomNavigationBar: const CustomBottomNavBar(
+        indexPage: 4,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -38,9 +40,12 @@ class _MyAccountPage extends State<MyAccountPage> {
               SizedBox(height: 20),
               CustomTextField(label: "Nascimento", hintText: '06/02/1977'),
               SizedBox(height: 20),
-              CustomElevatedButton(
-                label: 'Alterar Minha Senha',
-                page: '/PasswordReset',
+              SizedBox(
+                height: 50,
+                child: CustomElevatedButton(
+                  label: 'Alterar Minha Senha',
+                  page: "/passwordReset",
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -57,13 +62,19 @@ class _MyAccountPage extends State<MyAccountPage> {
               SizedBox(height: 5),
               Text("* Forma de pagamento: Cartão de crédito"),
               SizedBox(height: 10),
-              CustomElevatedButton(label: 'Alterar Meu Plano ', page: ''),
+              SizedBox(
+                  height: 50,
+                  child: CustomElevatedButton(
+                      label: 'Alterar Meu Plano ', page: "/resetSucess")),
               SizedBox(
                 height: 10,
               ),
-              CustomElevatedButton(
-                label: 'Alterar Forma de pagamento',
-                page: "/paymentPage",
+              SizedBox(
+                height: 50,
+                child: CustomElevatedButton(
+                  label: 'Alterar Forma de pagamento',
+                  page: "/payment",
+                ),
               )
             ]),
       ),

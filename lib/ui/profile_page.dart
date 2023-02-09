@@ -82,11 +82,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 const SizedBox(height: 25),
                 const SizedBox(
-                  height: 65,
+                  height: 60,
                   child: Padding(
                     padding: EdgeInsets.only(left: 20, right: 20, bottom: 10),
                     child: CustomElevatedButton(
-                        page: "/createAccount", label: "Entrar", isBold: true),
+                        page: "/myAccount", label: "Entrar", isBold: true),
                   ),
                 ),
                 const SizedBox(height: 15),
@@ -96,7 +96,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     CustomTextButton(
                       normalText: "Esqueci minha senha",
                       isUnderline: true,
-                      page: "/passwordReset",
+                      page: "/passwordRecovery",
                     ),
                     CustomTextButton(
                       normalText: "Esqueci meu E-mail",
@@ -113,14 +113,14 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
                 const SizedBox(height: 10),
-               const Padding(
-                   padding: EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: AltSignButton(),
-               ), //Put Row with two buttons;
+                ), //Put Row with two buttons;
               ],
             ),
-                ],
-              ),
+          ],
+        ),
       ),
     );
   }

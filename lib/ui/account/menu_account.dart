@@ -23,7 +23,7 @@ class _MenuAccountState extends State<MenuAccount> {
             onPressed: () {
               Navigator.of(context).push(PageRouteBuilder(pageBuilder:
                   (BuildContext context, Animation<double> animation,
-                  Animation<double> secondaryAnimation) {
+                      Animation<double> secondaryAnimation) {
                 return const NavigationBarUi();
               }, transitionsBuilder: (BuildContext context,
                   Animation<double> animation,
@@ -35,7 +35,10 @@ class _MenuAccountState extends State<MenuAccount> {
                 );
               }));
             },
-            icon: const Icon(Icons.close, color: Colors.black,)),
+            icon: const Icon(
+              Icons.close,
+              color: Colors.black,
+            )),
         title: Center(
             child: RichText(
                 text: TextSpan(
@@ -44,22 +47,23 @@ class _MenuAccountState extends State<MenuAccount> {
                       color: DefaultConfig.defaultThemeColor,
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      fontFamily: GoogleFonts
-                          .robotoSerif()
-                          .fontFamily,
+                      fontFamily: GoogleFonts.robotoSerif().fontFamily,
                     ),
                     children: const <TextSpan>[
-                      TextSpan(
-                        text: "Capital",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      )
-                    ]))),
+              TextSpan(
+                text: "Capital",
+                style: TextStyle(color: Colors.black, fontSize: 20),
+              )
+            ]))),
         actions: [
           IconButton(
               onPressed: () {
                 //Add search navigation here
               },
-              icon: const Icon(Icons.search, color: Colors.black,))
+              icon: const Icon(
+                Icons.search,
+                color: Colors.black,
+              ))
         ],
       ),
       body: Column(
@@ -74,13 +78,13 @@ class _MenuAccountState extends State<MenuAccount> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: const [
-                    Icon(Icons.account_circle_outlined,size:50 ),
+                    Icon(Icons.account_circle_outlined, size: 50),
                     SizedBox(width: 5),
                     Text("OLÁ, MARIA."),
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 100),
+                  padding: const EdgeInsets.only(left: 90),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: const [
@@ -93,7 +97,8 @@ class _MenuAccountState extends State<MenuAccount> {
           ),
           const CustomTextButton(
             page: '/myAccount',
-            normalText: 'MINHA CONTA', isRed: true,
+            normalText: 'MINHA CONTA',
+            isRed: true,
           ),
           Divider(
             thickness: 2,
@@ -101,7 +106,8 @@ class _MenuAccountState extends State<MenuAccount> {
           ),
           const CustomTextButton(
             page: '/configPage',
-            normalText: 'CONFIGURAÇÕES', isRed: true,
+            normalText: 'CONFIGURAÇÕES',
+            isRed: true,
           ),
           Divider(
             thickness: 2,
@@ -109,7 +115,8 @@ class _MenuAccountState extends State<MenuAccount> {
           ),
           const CustomTextButton(
             page: '/',
-            normalText: 'FAQ', isRed: true,
+            normalText: 'FAQ',
+            isRed: true,
           ),
           Divider(
             thickness: 2,
@@ -124,11 +131,14 @@ class _MenuAccountState extends State<MenuAccount> {
                     padding: const EdgeInsets.only(bottom: 5),
                     child: Image.asset("assets/images/groupedSocial.png"),
                   ),
-                  Text("NOS ACOMPANHE", style: TextStyle(
-                      color: DefaultConfig.defaultThemeColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
-                      fontFamily: DefaultConfig.defaultFont),)
+                  Text(
+                    "NOS ACOMPANHE",
+                    style: TextStyle(
+                        color: DefaultConfig.defaultThemeColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                        fontFamily: DefaultConfig.defaultFont),
+                  )
                 ],
               ),
             ),

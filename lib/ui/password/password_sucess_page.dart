@@ -11,7 +11,9 @@ class ResetSucess extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TitleAppBar(),
-      bottomNavigationBar: const CustomBottomNavBar(indexPage: 4,),
+      bottomNavigationBar: const CustomBottomNavBar(
+        indexPage: 4,
+      ),
       body: Center(
         child: Column(children: const [
           SizedBox(
@@ -40,8 +42,8 @@ class ResetSucess extends StatelessWidget {
           SizedBox(
               height: 40,
               width: 350,
-              child: CustomElevatedButton(
-                  page: "/emailConfirme", label: "Entendi"))
+              child:
+                  CustomElevatedButton(page: "/emailConfirm", label: "Entendi"))
         ]),
       ),
     );

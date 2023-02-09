@@ -19,7 +19,7 @@ class PasswordRecovery extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back_ios),
                   color: Colors.red,
                   onPressed: () {
-                    Navigator.of(context).restorablePushReplacementNamed("/");
+                    Navigator.of(context).popAndPushNamed("/navigator");
                   },
                 ),
                 const Text("Voltar")
@@ -37,7 +37,7 @@ class PasswordRecovery extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                  "Preencha o campo abaixo para iniciaro processo de recuperação de senha."),
+                  "Preencha o campo abaixo para iniciar o processo de recuperação de senha."),
               SizedBox(
                 height: 10,
               ),
@@ -48,7 +48,10 @@ class PasswordRecovery extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              CustomElevatedButton(page: "/PasswordSucess", label: "Validar")
+              SizedBox(
+                  height: 50,
+                  child: CustomElevatedButton(
+                      page: "/paymentSucess", label: "Validar"))
             ],
           ),
         )

@@ -15,18 +15,15 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.of(context).pushReplacementNamed(page);
+        Navigator.of(context).pushNamed(page);
       },
       style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll<Color>(
-              DefaultConfig.defaultThemeColor),
+          backgroundColor:
+              MaterialStatePropertyAll<Color>(DefaultConfig.defaultThemeColor),
           shape: MaterialStatePropertyAll(RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5.0),
-            side: BorderSide(
-                color: DefaultConfig.defaultThemeColor, width: 2),
-          )
-          )
-      ),
+            side: BorderSide(color: DefaultConfig.defaultThemeColor, width: 2),
+          ))),
       child: Text(label,
           style: TextStyle(
               color: Colors.white,

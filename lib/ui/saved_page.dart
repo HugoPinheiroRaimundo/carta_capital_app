@@ -3,6 +3,7 @@ import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
 
 import '../components/buttons/custom_button.dart';
+import '../components/cards/recent_view_cards.dart';
 
 class SavedPage extends StatefulWidget {
   const SavedPage({Key? key}) : super(key: key);
@@ -93,7 +94,7 @@ class _SavedPageState extends State<SavedPage> {
                       SavedCard(
                           author: "Carta Capital",
                           title:
-                          "O STF multa Daniel Silveira por espetáculo circense",
+                              "O STF multa Daniel Silveira por espetáculo circense",
                           edition: "1207"),
                       SizedBox(height: 25),
                       SavedCard(
@@ -102,10 +103,14 @@ class _SavedPageState extends State<SavedPage> {
                           edition: "1207"),
                       SizedBox(height: 25),
                       SavedCard(
-                          author: "Mino Carta", title: "O antídoto", edition: "1207"),
+                          author: "Mino Carta",
+                          title: "O antídoto",
+                          edition: "1207"),
                       SizedBox(height: 25),
                       SavedCard(
-                          author: "Marcelo Neto", title: "Rastros de um Nazista", edition: "1206"),
+                          author: "Marcelo Neto",
+                          title: "Rastros de um Nazista",
+                          edition: "1206"),
                       SizedBox(height: 25),
                       SavedCard(
                           author: "Marcos Coimbra",
@@ -148,12 +153,54 @@ class _SavedPageState extends State<SavedPage> {
                       children: [
                         const SizedBox(height: 25),
                         Center(
-                          child: Text("Visto recentemente",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  fontFamily: DefaultConfig.defaultFont)),
+                          child: Column(
+                            children: [
+                              Text("Mais lidas",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      fontFamily: DefaultConfig.defaultFont)),
+                              SingleChildScrollView(
+                                physics: const NeverScrollableScrollPhysics(),
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          top: 20.0, right: 10.0, left: 32),
+                                      child: SizedBox(
+                                        height: 166,
+                                        width: 290,
+                                        child: RecentViewCard(
+                                          image:
+                                              'assets/images/mags/image27.png',
+                                          title: 'Intriga e corrupção',
+                                          edition: '1206',
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.0),
+                                      child: SizedBox(
+                                        height: 166,
+                                        width: 290,
+                                        child: RecentViewCard(
+                                          image:
+                                              'assets/images/mags/image28.png',
+                                          title: 'Intriga e corrupção',
+                                          edition: '1206',
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ))

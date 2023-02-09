@@ -19,7 +19,7 @@ class EmailConfirm extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back_ios),
                   color: Colors.red,
                   onPressed: () {
-                    Navigator.of(context).restorablePushReplacementNamed("/");
+                    Navigator.of(context).popAndPushNamed("/navigator");
                   },
                 ),
                 const Text("Voltar")
@@ -55,8 +55,11 @@ class EmailConfirm extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              CustomElevatedButton(
-                  page: "/myAccount", label: "Entrar na minha Conta")
+              SizedBox(
+                height: 50,
+                child: CustomElevatedButton(
+                    page: "/myAccount", label: "Entrar na minha Conta"),
+              )
             ],
           ),
         )

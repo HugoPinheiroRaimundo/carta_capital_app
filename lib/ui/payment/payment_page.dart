@@ -110,8 +110,11 @@ class _PaymentPageState extends State<PaymentPage> {
               const SizedBox(
                 height: 20,
               ),
-              const CustomElevatedButton(
-                  page: "/PaymentRevision", label: "Confirmar"),
+              const SizedBox(
+                height: 50,
+                child: CustomElevatedButton(
+                    page: "/paymentRevision", label: "Confirmar"),
+              ),
             ],
           ),
         ),

@@ -36,7 +36,8 @@ class PaymentSucessPage extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          CustomElevatedButton(page: "", label: "Entrar na minha Conta")
+          CustomElevatedButton(
+              page: "/myAccount", label: "Entrar na minha Conta")
         ]),
       ),
     );
