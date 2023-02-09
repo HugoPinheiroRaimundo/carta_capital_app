@@ -21,7 +21,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TitleAppBar(),
-      bottomNavigationBar: const CustomBottomNavBar(),
+      bottomNavigationBar: const CustomBottomNavBar(indexPage: 4),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -72,8 +72,12 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       normalText: "Aceito a ",
                       underlinedText: "Política de Privacidade"),
                   SizedBox(height: 25),
-                  CustomElevatedButton(
-                      page: "/payment", label: "Criar Conta"),
+                  SizedBox(
+                    width: 330,
+                    height: 55,
+                    child: CustomElevatedButton(
+                        page: "/payment", label: "Criar Conta", isBold: true),
+                  ),
                   SizedBox(height: 25),
                   Center(
                     child: Text(

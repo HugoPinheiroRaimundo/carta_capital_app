@@ -32,6 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^3.0.1
+  shared_preferences: ^2.0.17
+  flash: ^2.0.5
+
 
 
 
@@ -68,19 +71,32 @@ flutter:
     - assets/images/mags/image26.png
     - assets/images/mags/image27.png
     - assets/images/mags/capaHome.png
+    - assets/images/mags/oAntidotoCapa.png
+    - assets/images/mags/lulaCapa.png
+    - assets/images/mags/cornoCapa.png
+    - assets/images/mags/danielCapa.png
+    - assets/images/mags/lulaEAlckminCapa.png
+    - assets/images/mags/lulaEPovoCapa.png
     - assets/images/mags/groupedMags.png
     - assets/images/mags/image33.png
+    - assets/images/mags/image28.png
     - assets/images/mags/image34.png
     - assets/images/mags/image35.png
+    - assets/images/mags/image36.png
     - assets/images/plusbutton.png
+    - assets/images/bookmarkIcon.png
+    - assets/images/quotes.png
+    - assets/images/minoAvatar.png
+    - assets/images/linkIcon.png
+    - assets/images/groupedSocial.png
+    - assets/images/google.png
+    - assets/images/apple.png
+    - assets/images/cards.png
+    - assets/images/maskGroup.png
+    - assets/images/tiradentes.png
     - assets/images/splash3.png
     - assets/images/splash1.png
     - assets/images/splash2.png
-    - assets/images/mags/image36.png
-    - assets/images/mags/image34.png
-    - assets/images/mags/image28.png
-    - assets/images/mags/image23.png
-
 
   # To add assets to your application, add an assets section, like this:
   # assets:

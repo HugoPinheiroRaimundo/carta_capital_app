@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../../utils/default.dart';
 
-class RecentViewCard extends StatelessWidget {
+class NextIssueCard extends StatelessWidget {
   final String image;
   final String title;
   final double width;
   final double height;
   final String edition;
 
-  const RecentViewCard(
+  const NextIssueCard(
       {Key? key,
       required this.image,
       required this.title,
@@ -51,12 +51,20 @@ class RecentViewCard extends StatelessWidget {
                       true, false, false, DefaultConfig.newsReader, 18),
                 ),
                 const SizedBox(height: 12),
-                Text(
-                  "06 DE MAIO DE 2022",
-                  style: TextStyle(
-                      color: DefaultConfig.dimnGrey,
-                      fontFamily: DefaultConfig.defaultFont),
-                ),
+                RichText(
+                    text: TextSpan(
+                        text: "POR",
+                        style: TextStyle(
+                            color: DefaultConfig.dimnGrey,
+                            fontFamily: DefaultConfig.defaultFont),
+                        children: [
+                      TextSpan(
+                          text: " CARTA CAPITAL",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: DefaultConfig.dimnGrey,
+                              fontFamily: DefaultConfig.defaultFont))
+                    ])),
                 const SizedBox(height: 12),
                 Row(
                   children: [

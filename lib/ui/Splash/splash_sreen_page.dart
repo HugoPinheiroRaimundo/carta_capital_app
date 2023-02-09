@@ -186,8 +186,8 @@ class PageTwo extends StatelessWidget {
                               );
                             }));
                           },
-                          child: Text("Pular",
-                              style: const TextStyle(color: Colors.white)))
+                          child: const Text("Pular",
+                              style: TextStyle(color: Colors.white)))
                     ],
                   )),
               Expanded(
@@ -196,23 +196,21 @@ class PageTwo extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 100.0),
                   child: Column(children: [
-                    Text(
+                    const Text(
                       "Receba as edições em sua casa\n   e tenha acesso ilimitado ao\n               conteúdo do app.",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Image.asset("assets/images/mags/groupedMags.png"),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    SizedBox(
-                      height: 40,
-                      width: 130,
+                    Expanded(
                       child: ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).push(PageRouteBuilder(
@@ -320,7 +318,7 @@ class PageThree extends StatelessWidget {
                   ],
                 )),
             const SizedBox(
-              height: 80,
+              height: 10,
             ),
             Column(
               children: const [
@@ -382,11 +380,8 @@ class PageThree extends StatelessWidget {
                 ),
               ]),
             ),
-            const SizedBox(
-              height: 120,
-            ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 5, right: 5),
+              padding: const EdgeInsets.only(top: 110,bottom: 5, right: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -418,3 +413,5 @@ class PageThree extends StatelessWidget {
     );
   }
 }
+
+

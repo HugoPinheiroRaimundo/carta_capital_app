@@ -93,7 +93,7 @@ class _SavedPageState extends State<SavedPage> {
                       SavedCard(
                           author: "Carta Capital",
                           title:
-                              "O STF multa Daniel Silveira por espetáculo circense",
+                          "O STF multa Daniel Silveira por espetáculo circense",
                           edition: "1207"),
                       SizedBox(height: 25),
                       SavedCard(
@@ -102,14 +102,10 @@ class _SavedPageState extends State<SavedPage> {
                           edition: "1207"),
                       SizedBox(height: 25),
                       SavedCard(
-                          author: "Mino Carta",
-                          title: "O antídoto",
-                          edition: "1207"),
+                          author: "Mino Carta", title: "O antídoto", edition: "1207"),
                       SizedBox(height: 25),
                       SavedCard(
-                          author: "Marcelo Neto",
-                          title: "Rastros de um Nazista",
-                          edition: "1206"),
+                          author: "Marcelo Neto", title: "Rastros de um Nazista", edition: "1206"),
                       SizedBox(height: 25),
                       SavedCard(
                           author: "Marcos Coimbra",

@@ -1,5 +1,6 @@
 import 'package:carta_capital_app/components/bars/bottom_nav_bar.dart';
 import 'package:carta_capital_app/components/bars/title_appbar.dart';
+import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -44,7 +45,8 @@ class ConfigPage extends StatelessWidget {
                     height: 10,
                   ),
                   Divider(
-                    color: Colors.black,
+                    color: DefaultConfig.borderGrey,
+                    thickness: 2,
                   ),
                   SizedBox(
                     height: 10,
@@ -53,17 +55,21 @@ class ConfigPage extends StatelessWidget {
                     children: [
                       Text("Alterar tamanho da fonte"),
                       SizedBox(
-                        width: 120,
+                        width: 100,
                       ),
-                      Icon(Icons.add_circle),
-                      Icon(Icons.ac_unit)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15.0),
+                        child: DefaultConfig().circularLButton("A +"),
+                      ),
+                      DefaultConfig().circularLButton("A -"),
                     ],
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Divider(
-                    color: Colors.black,
+                    color: DefaultConfig.borderGrey,
+                    thickness: 2,
                   ),
                   SizedBox(
                     height: 10,
@@ -74,14 +80,15 @@ class ConfigPage extends StatelessWidget {
                       SizedBox(
                         width: 170,
                       ),
-                      Icon(Icons.mail),
+                      Image.asset("assets/images/maskGroup.png"),
                     ],
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Divider(
-                    color: Colors.black,
+                    color: DefaultConfig.borderGrey,
+                    thickness: 2,
                   ),
                   SizedBox(
                     height: 10,
@@ -91,7 +98,8 @@ class ConfigPage extends StatelessWidget {
                     height: 10,
                   ),
                   Divider(
-                    color: Colors.black,
+                    color: DefaultConfig.borderGrey,
+                    thickness: 2,
                   ),
                   SizedBox(
                     height: 10,
@@ -101,7 +109,8 @@ class ConfigPage extends StatelessWidget {
                     height: 10,
                   ),
                   Divider(
-                    color: Colors.black,
+                    color: DefaultConfig.borderGrey,
+                    thickness: 2,
                   ),
                 ],
               ),

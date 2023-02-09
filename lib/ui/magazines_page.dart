@@ -1,9 +1,8 @@
 import 'package:carta_capital_app/components/bars/bottom_nav_bar.dart';
 import 'package:carta_capital_app/components/bars/title_appbar.dart';
-import 'package:carta_capital_app/utils/default.dart';
 import 'package:flutter/material.dart';
 
-import '../components/buttons/custom_button.dart';
+import '../utils/default.dart';
 
 class MagazinePage extends StatefulWidget {
   const MagazinePage({Key? key}) : super(key: key);
@@ -42,7 +41,7 @@ class _MagazinePageState extends State<MagazinePage> {
                       ),
                       child: Row(
                         children: [
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(
                                 right: 10.0, left: 10, top: 10, bottom: 10),
                             child: SizedBox(
@@ -67,7 +66,7 @@ class _MagazinePageState extends State<MagazinePage> {
                               onPressed: () {},
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
-                                children: [
+                                children: const [
                                   Text('Ano'),
                                   SizedBox(
                                     width: 2,
@@ -79,14 +78,14 @@ class _MagazinePageState extends State<MagazinePage> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(right: 5.0),
+                            padding: const EdgeInsets.only(right: 5.0),
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   primary: Colors.black),
                               onPressed: () {},
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
-                                children: [
+                                children: const [
                                   Text('Mês'),
                                   SizedBox(
                                     width: 2,
@@ -101,8 +100,8 @@ class _MagazinePageState extends State<MagazinePage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Edição da Semana",
                     style: TextStyle(
                         color: Colors.white,
@@ -121,7 +120,7 @@ class _MagazinePageState extends State<MagazinePage> {
                         const SizedBox(height: 100),
                         Center(
                             child: DefaultConfig()
-                                .sharpElevatedButton("LEIA AGORA")),
+                                .sharpElevatedButton("LEIA AGORA", "/", context, DefaultConfig.defaultThemeColor)),
                         const SizedBox(height: 20),
                         const Divider(
                           endIndent: 10,
@@ -143,12 +142,13 @@ class _MagazinePageState extends State<MagazinePage> {
                         ),
                         Container(
                           child: GridView(
+                            physics: NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 2,
-                                    crossAxisSpacing: 16,
-                                    mainAxisSpacing: 16),
+                            SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 16,
+                                mainAxisSpacing: 16),
                             children: [
                               Image.asset("assets/images/mags/image36.png"),
                               Image.asset("assets/images/mags/image34.png"),
@@ -166,22 +166,22 @@ class _MagazinePageState extends State<MagazinePage> {
                           endIndent: 10,
                           color: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Center(
                             child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text("CARREGAR MAIS"),
-                          style: ButtonStyle(
-                              backgroundColor:
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                  backgroundColor:
                                   MaterialStateProperty.all(Colors.black),
-                              shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(1.0),
-                                side: BorderSide(color: Colors.black, width: 2),
-                              ))),
-                        )),
+                                  shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(1.0),
+                                        side: const BorderSide(color: Colors.black, width: 2),
+                                      ))),
+                              child: const Text("CARREGAR MAIS"),
+                            )),
                       ])),
             ],
           ),

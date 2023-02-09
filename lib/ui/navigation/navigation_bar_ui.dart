@@ -19,6 +19,7 @@ class _NavigationBarUiState extends State<NavigationBarUi> {
   int _indexCurrent = 0;
 
 
+
   final List<Widget> _screenOptions = <Widget>[
     HomePage(),
     MagazinePage(),
@@ -27,14 +28,16 @@ class _NavigationBarUiState extends State<NavigationBarUi> {
     ProfilePage(),
   ];
 
-  void _onItemTap(int index) {
-    setState(() {
-      _indexCurrent = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+
+    void _onItemTap(int index) {
+      setState(() {
+        _indexCurrent = index;
+      });
+    }
+
     return Scaffold(
       appBar: const TitleAppBar(),
       body: _screenOptions.elementAt(_indexCurrent),
