@@ -11,7 +11,7 @@ import 'package:carta_capital_app/ui/navigation/navigation_bar_ui.dart';
 import 'package:carta_capital_app/ui/news_page.dart';
 import 'package:carta_capital_app/ui/news_page_resume.dart';
 import 'package:carta_capital_app/ui/password/password_recovery_page.dart';
-import 'package:carta_capital_app/ui/password/password_reset_page-sucess.dart';
+import 'package:carta_capital_app/ui/password/password_sucess_page.dart';
 import 'package:carta_capital_app/ui/password/password_reset_page.dart';
 import 'package:carta_capital_app/ui/payment/Payment_sucess_page.dart';
 import 'package:carta_capital_app/ui/payment/payment_page.dart';

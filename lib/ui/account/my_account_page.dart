@@ -65,7 +65,7 @@ class _MyAccountPage extends State<MyAccountPage> {
               SizedBox(
                   height: 50,
                   child: CustomElevatedButton(
-                      label: 'Alterar Meu Plano ', page: "/resetSucess")),
+                      label: 'Alterar Meu Plano ', page: "/signUp")),
               SizedBox(
                 height: 10,
               ),
